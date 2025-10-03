@@ -24,5 +24,29 @@ def create_list(values):
     return head
 
 def reverse_list(head):
-    # Your code here
-    pass
+    if head.next == None:
+        return head
+    else:
+        current = head
+        log_1 = head
+        log_2 = head
+
+        while current.next != None:
+            current = current.next
+
+            if log_1 == log_2:
+                log_1.next = None
+                log_1 = current
+            else:
+                log_1.next = log_2
+                log_2 = log_1
+                log_1 = current
+        log_1.next = log_2
+        head = current
+        return head
+
+values = [0]
+head = create_list(values)
+print_list(head)
+head = reverse_list(head)
+print_list(head)
