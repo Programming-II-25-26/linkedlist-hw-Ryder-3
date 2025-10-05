@@ -33,7 +33,6 @@ def reverse_list(head):
 
         while current.next != None:
             current = current.next
-
             if log_1 == log_2:
                 log_1.next = None
                 log_1 = current
